@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("{{ url_for('static', filename='images/bg2.jpg') }}");
+            background-color: #f2f2f2;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+        
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .form-container input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+        
+        .form-container input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>PM Maternal Health Care</h1>
+    <h3><center>Prediction Page</center></h3>
+    <div class="form-container">
+        <form action="/result" method="post">
+            <label for="Age">Age:</label>
+            <input type="text" name="Age" id="Age" required>
+            <label for="SystolicBP">Systolic BP:</label>
+            <input type="text" name="SystolicBP" id="SystolicBP" required>
+            <label for="DiastolicBP">Diastolic BP:</label>
+            <input type="text" name="DiastolicBP" id="DiastolicBP" required>
+            <label for="BS">Blood Sugar:</label>
+            <input type="text" name="BS" id="BS" required>
+            <label for="BodyTemp">Body Temperature:</label>
+            <input type="text" name="BodyTemp" id="BodyTemp" required>
+            <label for="HeartRate">Heart Rate:</label>
+            <input type="text" name="HeartRate" id="HeartRate" required>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
